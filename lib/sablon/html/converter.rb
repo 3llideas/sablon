@@ -15,7 +15,7 @@ module Sablon
         @root
       end
 
-      def new_layer(ilvl: false)
+      def new_layer(ilvl = false)
         @layers.push Layer.new([], ilvl)
       end
 
@@ -117,7 +117,7 @@ module Sablon
       end
     end
 
-    def ast_text(nodes, format: TextFormat.default)
+    def ast_text(nodes, format = TextFormat.default)
       runs = nodes.flat_map do |node|
         if node.text?
           Text.new(node.text, format)
